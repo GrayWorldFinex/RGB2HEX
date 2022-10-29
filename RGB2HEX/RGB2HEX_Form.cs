@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,15 +18,20 @@ namespace RGB2HEX
         public RGB2HEX_Form()
         {
             InitializeComponent();
+            Directory.CreateDirectory(@"C:\RGB2HEX");
+        }
+        public byte ConvertToByte(string text)
+        {
+            return Convert.ToByte(text); //Converting to Byte :D
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             ConvertToHex hex_conv = new ConvertToHex();
-            hex_conv.ConvertHex(35, 122, 122); //I don't Know how to Convert Byte to String, I'm Sorry :D
-            if (File.Exists(@"C:\Windows\Hex.txt"))
+            hex_conv.ConvertHex(ConvertToByte(textBox1.Text), ConvertToByte(textBox2.Text), ConvertToByte(textBox3.Text)); //I don't Know how to Convert Byte to String, I'm Sorry :D
+            if (File.Exists(@"C:\RGB2HEX\Hex.txt"))
             {
-                Process.Start("notepad", @"C:\Windows\Hex.txt");
+                Process.Start("notepad", @"C:\RGB2HEX\Hex.txt");
             }
             else
             {
