@@ -28,7 +28,7 @@ namespace RGB2HEX
         private void button1_Click(object sender, EventArgs e)
         {
             ConvertToHex hex_conv = new ConvertToHex();
-            hex_conv.ConvertHex(ConvertToByte(textBox1.Text), ConvertToByte(textBox2.Text), ConvertToByte(textBox3.Text)); //I don't Know how to Convert Byte to String, I'm Sorry :D
+            hex_conv.ConvertHex(ConvertToByte(textBox1.Text), ConvertToByte(textBox2.Text), ConvertToByte(textBox3.Text)); //Converting To Byte, and Finally getting Hex Color :D
             if (File.Exists(@"C:\RGB2HEX\Hex.txt"))
             {
                 Process.Start("notepad", @"C:\RGB2HEX\Hex.txt");
